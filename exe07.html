@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>exe07</title>
+</head>
+
+<body>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+    var myApp = angular.module('myApp', []);
+
+    myApp.controller('MyController', function($scope) {
+        $scope.spices = [{ "name": "pasilla", "spiciness": "mild" },
+            { "name": "jalapeno", "spiceiness": "hot hot hot!" },
+            { "name": "habanero", "spiceness": "LAVA HOT!!" }
+        ];
+        $scope.spice = "habanero";
+    });
+    
+    </script>
+</body>
+
+</html>

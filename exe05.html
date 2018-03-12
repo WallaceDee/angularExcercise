@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="spicyApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>exe05</title>
+</head>
+
+<body>
+    <div ng-controller="SpicyCtrl">
+        <input type="text" ng-model="customSpice" name="">
+        <button ng-click="spicy('Chili')">Chili</button>
+        <button ng-click="spicy('jalapeno')">jalapeno</button>
+        <button ng-click="spicy(customSpice)">customSpice</button>
+        <p>The food is {{spice}} spicy!</p>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+    var myApp = angular.module('spicyApp', []);
+
+    myApp.controller('SpicyCtrl', ['$scope', function($scope) {
+        $scope.customSpice = "wasabi";
+        $scope.spice = 'very';
+        $scope.spicy = function(name) {
+            $scope.spice = name;
+        }
+    }]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>exe05</title>
+</head>
+
+<body>
+    <div ng-controller="GreetingCtrl">
+        {{greeting}}
+    </div>
+    <div ng-controller="DoubleCtrl as dc" ng-init="num=0">
+        <input ng-model="num" min="0" required type="number"> {{double(num)}}
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+    var myApp = angular.module('myApp', []);
+
+    myApp.controller('GreetingCtrl', ['$scope', function($scope) {
+        $scope.greeting = 'Hola!';
+    }]);
+    myApp.controller('DoubleCtrl', ['$scope', function($scope) {
+        this.num = 0;
+        $scope.double = function(value) { return value * 2; };
+    }]);
+    </script>
+</body>
+
+</html>
