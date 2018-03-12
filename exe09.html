@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>exe09</title>
+    <style type="text/css">
+    .show-scope-demo.ng-scope,
+    .show-scope-demo .ng-scope {
+        border: 1px solid red;
+        margin: 3px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="show-scope-demo">
+        <div ng-controller="GreetCtrl">
+            Hello {{name}}!
+        </div>
+        <div ng-controller="ListCtrl">
+            <ol>
+                <li ng-repeat="name in names">from {{name}}</li>
+            </ol>
+        </div>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+    var myApp = angular.module('myApp', []);
+
+    myApp.controller('GreetCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+        $scope.name = 'World';
+        $rootScope.department = 'Angular';
+    }]);
+    myApp.controller('ListCtrl', ['$scope', function($scope) {
+        $scope.names = ['Igor', 'Misko', 'Vojta'];
+    }])
+    </script>
+</body>
+
+</html>
