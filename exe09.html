@@ -20,7 +20,7 @@
         </div>
         <div ng-controller="ListCtrl">
             <ol>
-                <li ng-repeat="name in names">from {{name}}</li>
+                <li ng-repeat="name in names">{{department}} - from {{name}}</li>
             </ol>
         </div>
     </div>
@@ -34,8 +34,12 @@
     }]);
     myApp.controller('ListCtrl', ['$scope', function($scope) {
         $scope.names = ['Igor', 'Misko', 'Vojta'];
-    }])
+    }]);
+    console.log(angular.element(document.getElementsByTagName("HTML")[0]).scope());
+
+    //xqc://toPay?
     </script>
 </body>
 
 </html>
+
